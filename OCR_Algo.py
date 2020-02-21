@@ -60,223 +60,133 @@ create3(conn)
 read2(conn)
 read(conn)
 
+def Conversion_Cv(filename):
+  
+  try:
 
-try:
-
-  #**********   Extraire le text d'un jpg ***************
-    print("               *****...........   JPG   ............****                  ")
-    folder_path = "C:\\Users\\asus\\Desktop\\Optical_Character_Reccognition-master"
-    for filename in os.listdir(folder_path):
-      if filename.endswith('.jpg'):
-        print("**  Nom du fichier : ",filename)
-        print('Editing image for better OCR result..........')
-        img = cv2.imread(filename)  ###reading image
-        img = cv2.resize(img, None, fx=1.5, fy=1.5, interpolation=cv2.INTER_CUBIC)
-        kernel = np.ones((1, 1), np.uint8)
-        img = cv2.dilate(img, kernel, iterations=1)
-        img = cv2.erode(img, kernel, iterations=1)
-        new_image = 'edited'+'_'+filename  ###new image which we save during procedure
-        cv2.imwrite(new_image, img)  ###Save a new edited image
-        read = pytesseract.image_to_string(new_image)  ####reading from new generated image
-        print(read)  ##print resuult
-
-
-
-    JPEG_DIR_SOURCE = 'C:/Users/asus/Desktop/Optical_Character_Reccognition-master'
-    JPEG_DEST_DIR = 'C:/Users/asus/Desktop/Optical_Character_Reccognition-master/Ancien_Jpeg'
-    JPEG_DEST_Nouv = 'C:/Users/asus/Desktop/Optical_Character_Reccognition-master/Nouveau_Jpeg'
-
-    for pname in os.listdir(JPEG_DIR_SOURCE):
-      if pname.lower().startswith('edited') and pname.lower().endswith('.jpg'):
-        shutil.move(os.path.join(JPEG_DIR_SOURCE, pname), JPEG_DEST_Nouv)    
-      elif pname.lower().endswith('.jpg'):
-        shutil.move(os.path.join(JPEG_DIR_SOURCE, pname), JPEG_DEST_DIR)       
-
-             
-
-      #**********   Extraire le text d'un pdf ***************
-    print("               *****...........   PDF   ............****                  ")
-
-    folder_path = "C:\\Users\\asus\\Desktop\\Optical_Character_Reccognition-master"
-    for filenamepdf in os.listdir(folder_path):
-      if filenamepdf.lower().endswith('.pdf'):   
-        print("PDF Name : ",filenamepdf)   
-        # creating a pdf file object
-        pdfFileObj = open(filenamepdf, 'rb')
-
-        # creating a pdf reader object
-        pdfReader = PyPDF2.PdfFileReader(pdfFileObj, strict = False)
-
-        # printing number of pages in pdf file
-        print("printing number of pages in pdf file : ", pdfReader.numPages)
-        x = pdfReader.numPages
-        # creating a page object
-        pageObj = pdfReader.getPage(0)
-
-        extrait = pageObj.extractText()
-        # extracting text from page
-        print("extracting text from page : ", extrait)
-        file_ = open("%s.txt" % filenamepdf, "w")
-        file_.write(extrait)
-        pdfFileObj.close()
-        # dictionary where the lines from 
-        # text will be stored 
+    #**********   Extraire le text d'un jpg ***************
+      print("               *****...........   JPG   ............****                  ")
+      folder_path = "C:\\Users\\asus\\Desktop\\Optical_Character_Reccognition-master"
     
-      if filenamepdf.endswith('.txt'):
-        f = filenamepdf
-        dict1 = {} 
-        # creating dictionary 
-        with open(f) as fh:
+      for filename in os.listdir(folder_path):
+        
+        if filename.endswith('.jpg'):
+          print("**  Nom du fichier : ",filename)
+          print('Editing image for better OCR result..........')
+          img = cv2.imread(filename)  ###reading image
+          img = cv2.resize(img, None, fx=1.5, fy=1.5, interpolation=cv2.INTER_CUBIC)
+          kernel = np.ones((1, 1), np.uint8)
+          img = cv2.dilate(img, kernel, iterations=1)
+          img = cv2.erode(img, kernel, iterations=1)
+          new_image = 'edited'+'_'+filename  ###new image which we save during procedure
+          cv2.imwrite(new_image, img)  ###Save a new edited image
+          read = pytesseract.image_to_string(new_image)  ####reading from new generated image
+          print(read)  ##print resuult
+          print("extracting text from page : ", read)
+          file_ = open('edited_'+"%s.txt" % filename.split('.')[0], "w")
+          file_.write(read)
+          file_.close()
+
+        elif filename.endswith('.pdf'):   
+          print("PDF Name : ",filename)   
+          # creating a pdf file object
+          pdfFileObj = open(filename, 'rb')
+
+          # creating a pdf reader object
+          pdfReader = PyPDF2.PdfFileReader(pdfFileObj, strict = False)
+
+          # printing number of pages in pdf file
+          print("printing number of pages in pdf file : ", pdfReader.numPages)
+
+          # creating a page object
+          pageObj = pdfReader.getPage(0)
+
+          extrait = pageObj.extractText()
+          # extracting text from page
+          print("extracting text from page : ", extrait)
+          file_ = open('edited_'+"%s.txt" % filename.split('.')[0], "w")
+          file_.write(extrait)
+          file_.close()
+          pdfFileObj.close()
+          # dictionary where the lines from 
+          # text will be stored 
+
+      JPEG_DIR_SOURCE = 'C:/Users/asus/Desktop/Optical_Character_Reccognition-master'
+      JPEG_DEST_DIR = 'C:/Users/asus/Desktop/Optical_Character_Reccognition-master/Ancien_Jpeg'
+      Nouvext = 'C:/Users/asus/Desktop/Optical_Character_Reccognition-master/Nouv_CV_Text'
+      PDF_DEST_Nouv = 'C:/Users/asus/Desktop/Optical_Character_Reccognition-master/Ancien_PDF'
+      for pname in os.listdir(JPEG_DIR_SOURCE):
+        if pname.startswith('edited') and pname.endswith('.txt'):
+          shutil.move(os.path.join(JPEG_DIR_SOURCE, pname), Nouvext)
+
+      Nouvext = "C:\\Users\\asus\\Desktop\\Optical_Character_Reccognition-master\\Nouv_CV_Text"
+
+      for filename in os.listdir(Nouvext):
+        os.chdir(r'C:\\Users\\asus\\Desktop\\Optical_Character_Reccognition-master\\Nouv_CV_Text')
+        if filename.startswith('edited'):
+          f = filename
+          print("nametext avant with : ",f)
+
+          dict1 = {} 
+          # creating dictionary 
+
+          with open(f) as fh:
             for line in fh:
                 
-                # reads each line and trims of extra the spaces
-                #and gives only the valid words 
-                columns = line.strip().split(' ',1)
-                if len(columns) >= 2 :
-                    command, description = columns
-                    dict1[command] = description.strip() 
-                else:
-                    print("Expected name and stats, got", columns)
+              print("boboboboobobo")
+              print("line",line)
+              print("nametext",f)
+              # reads each line and trims of extra the spaces
+              #and gives only the valid words 
+              columns = line.strip().split(' ',1)
+              if len(columns) >= 2 :
+                command, description = columns
+                dict1[command] = description.strip() 
+              else:
+                print("Erreur dans la conversion en json, got", columns)
 
-        out_file = open("%s.json" % filenamepdf, "w") 
+          out_file = open("%s.json" % filename.split('.')[0], "w") 
+          json.dump(dict1, out_file, indent = 4, sort_keys = False) 
+          out_file.close() 
 
-        json.dump(dict1, out_file, indent = 4, sort_keys = False) 
-        out_file.close() 
-    
-        with open("%s.json" % filenamepdf, 'r') as fi:
-          cursor = conn.cursor()
-          distros_dict = json.load(fi)
-          maryem=[distros_dict]        
-          for  i in maryem:
-            for key,value in i.items():
-              print("\n Key : "+key.title())
-              print("Value : "+ str(value))
-              maryem.append(i)
-              print("maryem icii : ",maryem[1])
-              print("meryam[1] : ",maryem[1])
-              # print("meryam[2] : ",maryem[2])
-              print("meryam[0] : ",maryem[0])
+      with open("%s.json" % filename.split('.')[0], 'r') as fi:
+        print("type de filename : ",type(filename))
+        cursor = conn.cursor()
+        distros_dict = json.load(fi)
+        maryem=[distros_dict]        
+        for  i in maryem:
+          for key,value in i.items():
+            print("\n Key : "+key.title())
+            print("Value : "+ str(value))
+            maryem.append(i)
+            print("maryem icii : ",maryem[1])
+            print("meryam[1] : ",maryem[1])
+            # print("meryam[2] : ",maryem[2])
+            print("meryam[0] : ",maryem[0])
 
-              print("cursor : ",cursor)
-              ch = key.title()
-              ch2 = str(value)
-              cursor.execute('insert into Cv(id_cv,id_candidat) values(?,?);',
-              (4,4))
-              print("\n Key : "+key.title())
-              print("Value : "+ str(value))
-              print("diiiis : ",distros_dict.values())
-              while distros_dict:
-                print("hedha distros_dict[0] **: ",distros_dict[1])
-                cursor.execute('insert into Candiats(id_candidat,id_cv,nom,prenom) values(?,?,?,?);',
-                (4,4,distros_dict,distros_dict))
-                cursor.execute("select * from Candiats")
-                for row in cursor:
-                  print(f'row = {row}')
-                  print('test2')
-                  print()
-                break
-              break
-
-          # cursor.execute("select * from Candiats")
-          # for row in cursor:
-          #   print(f'row = {row}')
-          #   print('test3')
-          #   print()
-          # break
+            print("cursor : ",cursor)
+            ch = key.title()
+            ch2 = str(value)
+            cursor.execute('insert into Cv(id_cv,id_candidat) values(?,?);',
+            (5,5))
+            print("\n Key : "+key.title())
+            print("Value : "+ str(value))
+            print("diiiis : ",distros_dict.values())
+            while distros_dict:
+              print("distros_dict",distros_dict)
+              print("hedha distros_dict[key] **: ",distros_dict[key])
+              cursor.execute('insert into Candiats(id_candidat,id_cv,nom,prenom) values(?,?,?,?);',
+              (5,5,distros_dict[key],distros_dict[key]))
+              cursor.execute("select * from Candiats")
+              for row in cursor:
+                print(f'row = {row}')
+                print('test2')
+                print()
 
 
-        # PDF_DIR_SOURCE = 'C:/Users/asus/Desktop/Optical_Character_Reccognition-master'
-        # PDF_DEST_DIR = 'C:/Users/asus/Desktop/Optical_Character_Reccognition-master/Ancien_PDF'
+        
+  except Exception as e:    
+      print('please provide proper name of the image')
+      print(e)
 
-
-    # print(":::::::::::::::::::::::::")
-
-    # f = 'C:/Users/asus/Desktop/Optical_Character_Reccognition-master/dernier.txt'
-    # dic ={}
-    # with open(f) as fh:
-    #   for line in fh:
-    #     print("Hedha Line : ",line)
-    #     command, description = line.strip().split(None, 1)
-    #     dic[command] = description.strip() 
-    #     print("hedha dic : ",dic)
-    #     print("Hedha dic de command : ",dic[command])
-    # out_file = open("test1.json", "w") 
-    # json.dump(dic, out_file, indent = 4, sort_keys = False) 
-    # out_file.close()
-
-
-
-
-
-
-      # if filenamepdf.endswith('.txt'): 
-      #   f = "%s" % filenamepdf
-      #   dic ={}
-      #   with open(f) as fh:
-
-      #     for line in fh:
-      #       print("Line  : ",line)             
-      #       command, description = line.strip().split(None, 1)
-      #       dic[command,description] = description.strip()            
-      #   out_file = open( "%s.json" % filenamepdf, "w") 
-      #   json.dump(dic, out_file, indent = 4, sort_keys = False)
-      #   out_file.close()
-
-
-
-   #/********************************************************************************************* 
-        # extrait_list = filenamepdf.splitlines()
-        # for line in extrait_list:
-        #   if ':' not in line:
-        #     continue
-        #   key, value = line.split(':')
-        #   extrait[key.strip()] = value.strip()
-        # j = json.dumps(extrait)
-        # with open('extrait.json','w') as f:
-        #   f.write(j)
-        #   f = json.load(open('extrait.json'))
-        #   print(f)
-        # for pdfname in os.listdir(PDF_DIR_SOURCE):
-        #   if pdfname.lower().endswith('.pdf'):
-        #     shutil.move(os.path.join(PDF_DIR_SOURCE, pdfname), PDF_DEST_DIR)
-
-
-
-
-
-
-
-        # def get_data(extrait):
-        #   _dict = {}
-        #   extrait_list = extrait.splitlines()
-        #   for line in extrait_list:
-        #     if ':' not in line:
-        #       continue
-        #     key, value = line.split(':')
-        #     _dict[key.strip()] = value.strip()
-        #   return _dict
-        # page_data = get_data(extrait)
-        # json_data = json.dumps(page_data) 
-
-        # print(json_data)
-        # print(":::::::   JSON :::::")
-        # file_ = open("C:/Users/asus/Desktop/Optical_Character_Reccognition-master/ouput2.json", "w")
-        # file_.write(json_data)
-        # subprocess.Popen("ls", stdout=file_)
-
-
-
-        # extrait = {}
-        # extrait_list = extrait.splitlines()
-        # for line in extrait_list:
-        #     if ':' not in line:
-        #         continue
-        #     key, value = line.split(':')
-        #     extrait[key.strip()] = value.strip()
-        # print(extrait)
-
-
-      
-except Exception as e:    
-    print('please provide proper name of the image')
-    print(e)
+Conversion_Cv('esprit')

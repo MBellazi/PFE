@@ -1,5 +1,5 @@
-Nom  Bellazi
+Nom Bellazi
 Prenom Meryam
-Ecole Esprit
+Age : 24
+Ecole : Esprit
 Anglais B2
- 

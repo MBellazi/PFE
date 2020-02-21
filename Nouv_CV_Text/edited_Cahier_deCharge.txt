@@ -1,0 +1,115 @@
+Cahier de charge
+ 
+Sujet
+ 
+:
+ 
+D
+ashboard 
+de
+ 
+production / coût avec un opérateur de réseau mobile en 
+France.
+ 
+Besoins fonctionnels
+ 
+:
+ 
+ 
+Gestion des utilisateurs
+ 
+:
+ 
+-
+ 
+Authentification des utilisateurs.
+ 
+-
+ 
+
+ 
+
+).
+ 
+ 
+Gestion des factures
+ 
+:
+ 
+
+ 
+:
+ 
+-
+ 
+
+line).
+ 
+-
+ 
+Exportation des factures.
+ 
+ 
+Gestion de Forecast
+ 
+:
+ 
+-
+
+ 
+-
+Taux de charge estimatif 
+ 
+ 
+ 
+
+le Forecast
+ 
+ 
+Gestion de catalogue de services
+ 
+:
+ 
+-
+ 
+
+onsulter un service
+.
+ 
+-
+
+ 
+des services multiples pour différents départements grâce au catalogue de 
+services facile à utiliser, afin que les utilisateurs puissent soumettre et recevoir des demandes en un rien 
+de temps.
+ 
+Ajouter / Modifier
+ 
+/ Supprimer un 
+service.
+ 
+ 
+
+ 
+
+
+-
+à
+-
+
+
+ 
+ 
+Recherche avancé par filtre
+ 
+ 
+ 
+Gestion de tickets 
+ 
+-
+Résolvez les 
+tickets. Suivez, hiérarchisez, attribuez et automatisez les processus de résolution pour 
+
+ 
+ 
+ 
