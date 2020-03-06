@@ -1,0 +1,106 @@
+Bejaoui Cyrine
+Etudiante ingénieure
+
+en Informatique
+
+Ariana, Tunisie
+
++216 52933 984
+cyrine.bejaoul@esprit.tn
+cyrineBs
+
+CyrineBejaoui
+
+80060
+
+A propos de moi —
+Eléve ingénieur a la recherche d'un
+
+stage de fin d'études en informatique
+4 partir du mois de Décembre 2019.
+
+Langues
+
+Arabe(Langue Maternelle)
+Francais (B2)
+Anglais
+
+Espagnol(Elémentaire A1)
+
+Vie Associative —
+
+= Club Radio ISAMM.
+- Club Photo ISAMM.
+- Jeunes Ingénieurs ISAMM.
+
+Centre D’intérét —
+
+- Dance.
+
+- Camping.
+
+- Randonnée.
+
+- Films et Séries télévisées.
+
+Aot/2019 Devlopy, startup base en Tunis Stage Technicien, Tunis
+* Conception et réalisation du module ressource humaine et
+gestion de congé pour une application de gestion de cab-
+inet comptable et expert.
+Juin/2019 + Technologies: Angular, Node.js, REST, MongoDB.
+
+Aoit/2018 Tunivisions, magazine tunisien ‘Stage Technicien, Tunis:
++ Développement d'une plateforme web pour la vente de bil-
+
+let en ligne.
+
+Juin/2018 + Technologies: Symfony, MySQL, Git.
+
+Juin/2017 just Smart, société de développement mobile web PFE
+
+* Conception et réalisation d'un site web e-commerce qui
+
+permetaux acheteurs web de faire des économies sur leurs
+achats Internet en introduisant le Cashback qui permet
+aux internautes de récupérer quelques dinars lors d'un
+achat en ligne.
+
+Jan/2017 + Technologies: Laravel, UML.
+
+Tulse ad)
+
+   
+
+Présent Ingénierie en informatique ESPRIT
+Sep/2017 _ Etudiante encinquiéme année cycle d'ingénieurs a Esprit.
+Juin/2017 licence fondamentale en informatique et multimédia — IsamM
+Sep/2014 _Etudiante en informatique et multimédia.
+
+Juin/2013  Dipléme de Baccalauréat tyode Khaiceddine Pacha
+Sep/2012 Sciences Mathématiques.
+Mai/2019 Projet intégré Systéme et Réseau
+* Programme pour fournir aux étudiants des outils de con-
+ception et de développement, en implémentant une archi-
+Jan/2019 tecture réseau sécurisé en utilisant GNS3 et pfSense.
+Dec/2019 Projet de développement intégré
++ Plateforme Web qui gére les candidatures au sein de Or-
+ganisme Tunisien des Droits d'Auteur et des Droits voisins
+(OTDAV) en utilisant JEE et .NET comme les technologies
+Sep/2018 de Frontend et Backend.
+Mai/2019 Projet de développement intégré
+* Projet intégré de développement a esprit comprenant trois
+parties (Desktop/Web/Mobile) en utilisant différent tech-
+Jan/2018 nologies (JavaFx/Symfony/CodenameOne).
+Corr id 35
+
+  
+
+Langages: Java, C#, PI-SQL, PHP, HTMLS, CSS3, JavaScript, XML, R, C/C++.
+Frameworks: JEE, ASP.NET, Spring, AngularJS, JavaFX, Symfony.
+
+Serveurs: _ NodeJS, Apache-Tomcat, Wildflly.
+
+SGBD: MySQL,Oracle, MongoDB, Cassandra,NoSql.
+WebServices: RESTful, JAX-WS.
+
+Autres: Scrum, GIT, Gestion de projet.
