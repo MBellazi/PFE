@@ -188,14 +188,14 @@ try:
           # print('result["Bejaoui"]',result["Bejaoui"])
 
           while distros_dict:
-            print("distros_dict",distros_dict)
-            print("hedha distros_dict[key] **: ",distros_dict[key])
-            print('distros_dict[Meryam]',distros_dict['Meryam'])
-            print('distros_dict[0]',distros_dict[0])
-            print('distros_dict[1]',distros_dict[1])
-            print('distros_dict',distros_dict)
-            # cursor.execute("delete from Candiats where prenom =' distros_dict[key]'")
-            cursor.execute("insert into Candiats(nom,prenom) values ('distros_dict['key']','distros_dict['key']')")
+            # print("distros_dict",distros_dict)
+            # print("hedha distros_dict[key] **: ",distros_dict[key])
+            # print('distros_dict[Meryam]',distros_dict['Meryam'])
+            # print('distros_dict[0]',distros_dict[0])
+            # print('distros_dict[1]',distros_dict[1])
+            # print('distros_dict',distros_dict)
+            # # cursor.execute("delete from Candiats where prenom =' distros_dict[key]'")
+            cursor.execute("insert into Candiats(nom,prenom) values ('distros_dict[key]','distros_dict[key]')")
             for row in cursor:
               print(f'row = {row}')
               print('test2')
